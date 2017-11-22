@@ -18,6 +18,21 @@ namespace tddtextgame
 
 			Assert::AreEqual(expectedhealth, GetThis->GetCharacterHealth());
 		}
+		TEST_METHOD(HealthBattleCheck)
+		{
+			CharacterHealth*GetThis = new CharacterHealth(100,25);
+			int expectedhealth = 75;
 
+
+			Assert::AreEqual(expectedhealth, GetThis->GetNewHealth());
+		}
+		TEST_METHOD(HealthVariableGain)
+		{
+			CharacterHealth*GetThis = new CharacterHealth(90,0,10);
+			int expectedhealth = 100;
+
+
+			Assert::AreEqual(expectedhealth, GetThis->GetHealthUp());
+		}
 	};
 }
